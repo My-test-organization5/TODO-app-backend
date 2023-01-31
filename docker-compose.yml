@@ -1,4 +1,4 @@
-version: '3.8'
+version: '3'
 
 services:
   mysqldb:
@@ -11,21 +11,42 @@ services:
       - 3333:3306
     volumes:
       - db:/var/lib/mysql
-  app:
+
+  gateway:
     depends_on:
       - mysqldb
-    build: .
+    build: ./gateway
     restart: unless-stopped
+    hostname: gateway
     ports:
-      - 3000:3000
-    environment:
-      - DB_HOST=mysqldb
-      - DB_USER=root
-      - DB_PASSWORD=123456
-      - DB_NAME=todo_db
-      - DB_PORT=3306
+      - 8000:8000
+    env_file:
+      - .env
     stdin_open: true
     tty: true
+    volumes:
+      - ./:/var/www
+
+  auth:
+    build: ./auth
+    restart: always
+    hostname: auth
+    env_file:
+      - .env
+    links:
+      - mysqldb
+    stdin_open: true
+    tty: true
+    volumes:
+      - ./:/var/www
+#  todo:
+#    build: ./todo
+#    restart: always
+#    hostname: todo
+#    env_file:
+#      - .env
+#    links:
+#      - mysqldb
 
 volumes:
   db:

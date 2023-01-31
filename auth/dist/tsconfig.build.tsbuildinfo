@@ -1,0 +1,107 @@
+{
+  "program": {
+    "fileInfos": {
+      "../src/auth.controller.ts": {
+        "version": "5b5a823f8b53cb994ca63392ac89253cf8e0be8163e42329acea1ac5174cf672",
+        "signature": "a8dd450804a423e5fec4dd72d23500de95c1775510363247112f96bdd7febde8",
+        "affectsGlobalScope": false
+      },
+      "../src/services/auth.service.ts": {
+        "version": "a4b3728afd041340d7ae4486894d1499208b2a076b9fd2006c244d3dc246667a",
+        "signature": "82708cd4dce23be48c0f565a65cf477158b799332b4b0d1184dc820339da2ea5",
+        "affectsGlobalScope": false
+      },
+      "../src/services/config/jwt-config.service.ts": {
+        "version": "9dedf3136367e8d954e2834890a2c468c74d575f50a6f74bab44a3273f36af06",
+        "signature": "9a4360f165585840467d34fd4d51de080dced30e25581a694e94c91b6aa3b592",
+        "affectsGlobalScope": false
+      },
+      "../src/services/config/mongo-config.service.ts": {
+        "version": "514b30213ca8fc00cae4af184b26a57cde48621468ffb0ff1e0637e0f3612000",
+        "signature": "40461826d8858083896000d6cda946bb32cb14b8587ad4c62cf36f55d22e5860",
+        "affectsGlobalScope": false
+      },
+      "../src/schemas/token.schema.ts": {
+        "version": "fe8aca39b3e484102687fdd71c1aa340722e002738e374e5bb5d2884d6d3ab0e",
+        "signature": "c5ceaf8e5ff62bc2da15be2a2b83bd669729acb23eaa0f698a432fb4047b0aba",
+        "affectsGlobalScope": false
+      },
+      "../src/auth.module.ts": {
+        "version": "21df747451d3c6c9744f2b253eec92a4c634e5fea37822c192b14b0379c3e81d",
+        "signature": "a28b5c0c372fb375910b3fe3c3ce4331509bc18ccef7cc39c9ee9d8daf8225d1",
+        "affectsGlobalScope": false
+      },
+      "../src/services/config/config.service.ts": {
+        "version": "c6b18d5d9823e1bb1ab1e78ade2dcc28796e1a56f555b5febfdde457adf8e622",
+        "signature": "66eba49d0ea7725b7f20ba67276d101ed5a7b71cda6b7bf6dd59ef41f1957c4f",
+        "affectsGlobalScope": false
+      },
+      "../src/main.ts": {
+        "version": "aeef8a89886b37b3e71495693ddd96695ed983604130cea12ec3547e3f31096c",
+        "signature": "8e609bb71c20b858c77f0e9f90bb1319db8477b13f9f965f1a1e18524bf50881",
+        "affectsGlobalScope": false
+      },
+      "../src/interfaces/token-data-response.interface.ts": {
+        "version": "ea0fa6d171390c2f6e9d87d23668c2ef5b52f6a7380aec9ebc3e7524f98101de",
+        "signature": "0be4a86bb855da9a1140722975a1290d5cf1228641909821f8c3c7c933fada92",
+        "affectsGlobalScope": false
+      },
+      "../src/interfaces/token-destroy-response.interface.ts": {
+        "version": "26abc4d062797b5048a7e92c9f8a3ca88df729511445610e856504985a458935",
+        "signature": "0352f7782a7c0c2edc45634cc76d2377e73dcf4ab65b1ac645614863b0dc2cdb",
+        "affectsGlobalScope": false
+      },
+      "../src/interfaces/token-response.interface.ts": {
+        "version": "dbb689fb330b55a51bb96128191898b9dd4d639f3099cfa7a3ee9cd222c55579",
+        "signature": "80ecddad02faf086b27fb351a1c438bde237927e4a4f17aabe331fd15d95853e",
+        "affectsGlobalScope": false
+      },
+      "../src/interfaces/token.interface.ts": {
+        "version": "3087eee5c696cf4c142e075831a91d4e5767efcc0d855a5251d48e68dc01c537",
+        "signature": "b630b5466dbb76741939d2e25db627473f0ba3fa436c443e6e86d5047ee3938b",
+        "affectsGlobalScope": false
+      }
+    },
+    "options": {
+      "module": 1,
+      "declaration": true,
+      "removeComments": true,
+      "emitDecoratorMetadata": true,
+      "experimentalDecorators": true,
+      "target": 4,
+      "sourceMap": true,
+      "outDir": "./",
+      "baseUrl": "..",
+      "incremental": true,
+      "project": "../tsconfig.build.json",
+      "watch": true,
+      "configFilePath": "../tsconfig.build.json"
+    },
+    "referencedMap": {
+      "../src/auth.module.ts": [
+        "../src/auth.controller.ts",
+        "../src/schemas/token.schema.ts",
+        "../src/services/auth.service.ts",
+        "../src/services/config/jwt-config.service.ts",
+        "../src/services/config/mongo-config.service.ts"
+      ],
+      "../src/main.ts": [
+        "../src/auth.module.ts",
+        "../src/services/config/config.service.ts"
+      ]
+    },
+    "exportedModulesMap": {
+      "../src/interfaces/token.interface.ts": [
+        "../node_modules/mongoose/index.d.ts"
+      ],
+      "../src/services/config/jwt-config.service.ts": [
+        "../node_modules/@nestjs/jwt/index.d.ts"
+      ],
+      "../src/services/config/mongo-config.service.ts": [
+        "../node_modules/@nestjs/mongoose/index.d.ts"
+      ]
+    },
+    "semanticDiagnosticsPerFile": []
+  },
+  "version": "4.0.5"
+}
