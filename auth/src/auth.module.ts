@@ -1,10 +1,10 @@
 import { Module } from '@nestjs/common';
-import { JwtModule } from '@nestjs/jwt';
-import { MongooseModule } from '@nestjs/mongoose';
+// import { JwtModule } from '@nestjs/jwt';
+// import { MongooseModule } from '@nestjs/mongoose';
 import { AuthController } from './auth.controller';
 import { AuthService } from './services/auth.service';
-import { JwtConfigService } from './services/config/jwt-config.service';
-import { MongoConfigService } from './services/config/mongo-config.service';
+// import { JwtConfigService } from './services/config/jwt-config.service';
+// import { MongoConfigService } from './services/config/mongo-config.service';
 import { TokenSchema } from './schemas/token.schema';
 
 @Module({
