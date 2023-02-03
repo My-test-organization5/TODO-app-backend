@@ -22,7 +22,7 @@ export class TodoController {
     async mc(): Promise<any> {
         console.log('in mc')
         try {
-            const url = `http://auth/auth`
+            const url = `http://nginx-proxy/auth`
             const resp = await fetch(url)
             const data = await resp.json();
             console.log('data')
