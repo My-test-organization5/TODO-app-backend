@@ -19,6 +19,7 @@
     "@nestjs/platform-express": "8.0.0",
     "@nestjs/jwt": "8.0.0",
     "mongoose": "5.11.15",
+    "node-fetch": "3.3.0",
     "reflect-metadata": "0.1.13",
     "rimraf": "3.0.2",
     "rxjs": "7.3.0"
