@@ -6,7 +6,7 @@ const config_service_1 = require("./services/config/config.service");
 async function bootstrap() {
     const app = await core_1.NestFactory.create(app_module_1.AppModule);
     const port = new config_service_1.ConfigService().get('port');
-    console.log(`GATEWAY PORT: ${port}`);
+    console.log(`TODO PORT22: ${port}`);
     await app.listen(port);
 }
 bootstrap();

@@ -8,27 +8,16 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.AppModule = void 0;
 const common_1 = require("@nestjs/common");
-const microservices_1 = require("@nestjs/microservices");
-const auth_controller_1 = require("./auth.controller");
+const todo_controller_1 = require("./todo/todo.controller");
 const config_service_1 = require("./services/config/config.service");
 let AppModule = class AppModule {
 };
 AppModule = __decorate([
     common_1.Module({
         imports: [],
-        controllers: [auth_controller_1.AuthController],
+        controllers: [todo_controller_1.TodoController],
         providers: [
             config_service_1.ConfigService,
-            {
-                provide: 'AUTH_SERVICE',
-                useFactory: (configService) => {
-                    const authServiceOptions = configService.get('authService');
-                    console.log('authServiceOptions11222p33');
-                    console.log(authServiceOptions);
-                    return microservices_1.ClientProxyFactory.create(authServiceOptions);
-                },
-                inject: [config_service_1.ConfigService],
-            },
         ],
     })
 ], AppModule);

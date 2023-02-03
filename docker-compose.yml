@@ -1,4 +1,4 @@
-version: '3'
+version: '3.8'
 
 services:
   mysqldb:
@@ -12,41 +12,52 @@ services:
     volumes:
       - db:/var/lib/mysql
 
-  gateway:
+  todo:
     depends_on:
       - mysqldb
-    build: ./gateway
+    working_dir: /app/todo
+    build:
+      context: ./todo
+      dockerfile: Dockerfile
+    container_name: todo
     restart: unless-stopped
-    hostname: gateway
-    ports:
-      - 8000:8000
+    hostname: todo
     env_file:
       - .env
     stdin_open: true
     tty: true
     volumes:
-      - ./:/var/www
+      - ./todo:/app
+      - /app/node_modules
 
   auth:
-    build: ./auth
-    restart: always
+    depends_on:
+      - mysqldb
+    working_dir: /app/auth
+    build:
+      context: ./auth
+      dockerfile: Dockerfile
+    container_name: auth
+    restart: unless-stopped
     hostname: auth
     env_file:
       - .env
-    links:
-      - mysqldb
     stdin_open: true
     tty: true
     volumes:
-      - ./:/var/www
-#  todo:
-#    build: ./todo
-#    restart: always
-#    hostname: todo
-#    env_file:
-#      - .env
-#    links:
-#      - mysqldb
+      - ./auth:/app
+      - /app/node_modules
+
+  nginx-proxy:
+    build:
+      dockerfile: Dockerfile
+      context: ./proxy
+    depends_on:
+      - todo
+      - auth
+    ports:
+      - "80:80"
+
 
 volumes:
   db:
