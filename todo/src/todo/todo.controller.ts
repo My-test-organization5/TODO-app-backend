@@ -12,17 +12,17 @@ export class TodoController {
     ) {}
 
 
-    // @Get()
-    // findAll(): any {
-    //     console.log('in find1')
-    //     return {a:'1'}
-    // }
+    @Get('/custom')
+    findAll(): any {
+        console.log('in custom')
+        return {a:'custom'}
+    }
 
     @Get()
     async mc(): Promise<any> {
         console.log('in mc')
         try {
-            const url = `http://nginx-proxy/auth`
+            const url = `http://auth/auth`
             const resp = await fetch(url)
             const data = await resp.json();
             console.log('data')
